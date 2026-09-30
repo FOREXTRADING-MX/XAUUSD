@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MX Gold Trading Course</title>
+
+<meta name="description"
+content="MX Gold Trading Course - Learn gold market analysis, chart reading and risk management.">
+
+<style>
+:root{
+    --gold:#d4af37;
+    --gold-light:#f5d76e;
+    --black:#050505;
+    --card:#101010;
+    --border:#292929;
+    --gray:#aaa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+    radial-gradient(circle at 50% -10%,#2b230d 0,#080808 38%,#030303 100%);
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(0,0,0,.9);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #252525;
+}
+
+.nav-inner{
+    max-width:1100px;
+    margin:auto;
+    padding:18px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    color:#ccc;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:var(--gold-light);
+}
+
+/* HERO */
+
+.hero{
+    max-width:1100px;
+    min-height:680px;
+    margin:auto;
+    padding:90px 24px 70px;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid #765f1e;
+    color:var(--gold-light);
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.02;
+    margin-bottom:25px;
+}
+
+.gold{
+    color:var(--gold-light);
+}
+
+.hero p{
+    color:#bbb;
+    font-size:18px;
+    max-width:650px;
+}
+
+.cta{
+    display:inline-block;
+    margin-top:32px;
+    background:linear-gradient(135deg,#f5d76e,#a77b0e);
+    color:#090909;
+    font-weight:900;
+    padding:16px 27px;
+    border-radius:9px;
+    transition:.2s;
+}
+
+.cta:hover{
+    transform:translateY(-2px);
+}
+
+/* GOLD IMAGE AREA */
+
+.gold-art{
+    height:400px;
+    border-radius:24px;
+    border:1px solid #5d4a19;
+    overflow:hidden;
+    position:relative;
+
+    background:
+    radial-gradient(circle at 70% 40%,#5b460f 0,#211a08 22%,#080808 60%);
+}
+
+.gold-art::before{
+    content:"XAU / USD";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+
+    font-size:55px;
+    font-weight:900;
+    color:#e4c45c;
+    opacity:.13;
+}
+
+.coin{
+    position:absolute;
+    width:205px;
+    height:205px;
+    border-radius:50%;
+    right:55px;
+    top:85px;
+
+    border:7px solid #d6b44b;
+
+    background:
+    radial-gradient(circle,#f7df82,#9a7116 70%,#3e2d09);
+
+    box-shadow:0 0 80px rgba(220,180,50,.2);
+}
+
+.coin::after{
+    content:"Au";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+
+    font-size:72px;
+    font-weight:900;
+    color:#60470b;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:85px 24px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.sub{
+    text-align:center;
+    color:#999;
+    margin-bottom:45px;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:linear-gradient(145deg,#121212,#090909);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:28px;
+}
+
+.card h3{
+    color:var(--gold-light);
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aaa;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+    display:grid;
+    gap:14px;
+}
+
+.year{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:20px;
+    align-items:center;
+
+    background:#0d0d0d;
+    border:1px solid #242424;
+    border-radius:13px;
+    padding:20px;
+}
+
+.year b{
+    color:var(--gold-light);
+    font-size:22px;
+}
+
+/* PRICE */
+
+.price{
+    max-width:520px;
+    margin:auto;
+    text-align:center;
+
+    border:1px solid #66531d;
+    background:linear-gradient(145deg,#12100a,#080808);
+    border-radius:22px;
+    padding:45px;
+}
+
+.amount{
+    font-size:65px;
+    font-weight:900;
+    color:var(--gold-light);
+}
+
+.price small{
+    color:#999;
+}
+
+.payment{
+    display:block;
+    margin-top:25px;
+    background:var(--gold-light);
+    color:#090909;
+
+    padding:16px;
+    border-radius:8px;
+
+    font-weight:900;
+}
+
+.payment:hover{
+    background:#fff0a3;
+}
+
+.notice{
+    margin-top:15px;
+    color:#888;
+    font-size:13px;
+}
+
+/* REVIEWS */
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    background:#0d0d0d;
+    border:1px solid #242424;
+    padding:25px;
+    border-radius:15px;
+}
+
+.stars{
+    color:var(--gold-light);
+    letter-spacing:3px;
+}
+
+.review p{
+    color:#bbb;
+    margin:12px 0;
+}
+
+.review small{
+    color:#777;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    color:var(--gold-light);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #222;
+    text-align:center;
+    padding:35px 20px;
+    color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:60px;
+    }
+
+    .grid,
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .gold-art{
+        height:300px;
+    }
+
+    .coin{
+        width:150px;
+        height:150px;
+        right:30px;
+        top:70px;
+    }
+
+    .coin::after{
+        font-size:55px;
+    }
+
+    .year{
+        grid-template-columns:70px 1fr;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<div class="nav-inner">
+
+<div class="logo">MX</div>
+
+<div class="nav-links">
+<a href="#course">Course</a>
+<a href="#gold">Gold</a>
+<a href="#reviews">Reviews</a>
+<a href="#payment">Payment</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div>
+
+<span class="badge">
+MX Gold Trading Course
+</span>
+
+<h1>
+Understand
+<span class="gold">Gold Trading</span>
+With a Clear System.
+</h1>
+
+<p>
+Learn the foundations of XAU/USD analysis,
+chart reading, market structure and risk management
+in one focused course.
+</p>
+
+<a class="cta" href="#payment">
+Get The Course — $100
+</a>
+
+</div>
+
+
+<div class="gold-art">
+
+<div class="coin"></div>
+
+</div>
+
+</header>
+
+
+
+<!-- COURSE -->
+
+<section id="course">
+
+<h2 class="section-title">
+What You'll Learn
+</h2>
+
+<p class="sub">
+A practical learning path focused on gold markets.
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+01 — Gold Market Basics
+</h3>
+
+<p>
+Understand XAU/USD, trading sessions,
+volatility and factors that can move gold prices.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+02 — Chart Analysis
+</h3>
+
+<p>
+Study market structure, support and resistance,
+trends and common chart setups.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+03 — Risk Management
+</h3>
+
+<p>
+Learn position sizing, stop-loss concepts
+and how to manage risk before entering a trade.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- GOLD HISTORY -->
+
+<section id="gold">
+
+<h2 class="section-title">
+Gold Market Timeline
+</h2>
+
+<p class="sub">
+Historical reference points for educational purposes.
+</p>
+
+
+<div class="timeline">
+
+<div class="year">
+
+<b>2001</b>
+
+<span>
+Gold traded around historically low levels
+following the long decline from the 1980s peak.
+</span>
+
+</div>
+
+
+<div class="year">
+
+<b>2005</b>
+
+<span>
+Gold was in a broader multi-year uptrend
+as the commodities cycle strengthened.
+</span>
+
+</div>
+
+
+<div class="year">
+
+<b>2010</b>
+
+<span>
+Gold had moved substantially higher during
+the global financial and monetary-policy era.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PAYMENT -->
+
+<section id="payment">
+
+<h2 class="section-title">
+Get Access
+</h2>
+
+<p class="sub">
+One-time course fee — $100
+</p>
+
+
+<div class="price">
+
+<div class="amount">
+$100
+</div>
+
+<small>
+One-time course fee
+</small>
+
+
+<a
+class="payment"
+href="https://nowpayments.io/payment/?iid=5920203280"
+target="_blank"
+rel="noopener">
+
+PAY $100 NOW
+
+</a>
+
+
+<p class="notice">
+After payment, send your payment screenshot
+through WhatsApp or email for verification.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- AFTER PAYMENT -->
+
+<section>
+
+<h2 class="section-title">
+After Payment
+</h2>
+
+<p class="sub">
+Follow these simple steps after completing your payment.
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+1. Complete Payment
+</h3>
+
+<p>
+Click the payment button and complete
+the $100 payment.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+2. Send Screenshot
+</h3>
+
+<p>
+Send your payment screenshot through
+WhatsApp or email.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+3. Receive Course
+</h3>
+
+<p>
+After payment verification,
+course access will be provided.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="contact">
+
+<p style="margin-top:35px;color:#aaa;">
+
+WhatsApp:
+<a href="https://wa.me/447831078229">
++44 7831 078229
+</a>
+
+<br>
+
+Email:
+<a href="mailto:Tradingking088@gmail.com">
+Tradingking088@gmail.com
+</a>
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<h2 class="section-title">
+Student Feedback
+</h2>
+
+<p class="sub">
+Replace these examples with genuine customer feedback.
+</p>
+
+
+<div class="reviews">
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"BHAI ZINDAGI SET HOGYE AFTER I BUYING LOVE YOU."
+</p>
+
+<small>
+Sample Student
+</small>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"BETS CORUSE ."
+</p>
+
+<small>
+Sample Student
+</small>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Sample testimonial — replace this
+with a genuine customer review."
+</p>
+
+<small>
+Sample Student
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2023 MX Gold Trading Course
+
+<br>
+
+Educational content only. Trading involves risk.
+
+</footer>
+
+
+</body>
+</html>
