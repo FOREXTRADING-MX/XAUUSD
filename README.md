@@ -1015,8 +1015,9 @@ genuine customer feedback.
 
 <p>
 
-"Bhai kasm sy zindagi set hogye sirf 
-ak coruse sy meri sab tension dor gye Love you."
+"Sample testimonial —
+replace with a genuine
+customer review."
 
 </p>
 
@@ -1040,8 +1041,9 @@ Sample Student
 
 <p>
 
-"After buying i really have no words
-to saying yet Really Thank you MX."
+"Sample testimonial —
+replace with a genuine
+customer review."
 
 </p>
 
@@ -1090,7 +1092,7 @@ Sample Student
 
 <footer>
 
-© 2023 MX Gold Trading Course
+© 2026 MX Gold Trading Course
 
 <br>
 
